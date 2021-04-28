@@ -1,0 +1,215 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem 2rem;
+    margin-top: 5rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.card {
+    // box-shadow: 1px 1px 10px #dddddd;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 11%), 0 1px 2px 0 rgb(0 0 0 / 8%);
+    border-radius: 0.4rem;
+}
+
+input {
+    outline: none;
+    background: var(--card-color);
+    color: var(--card-title);
+}
+
+.search-bar {
+    margin: 6rem 0 2rem 0;
+    padding: 0rem 1rem;
+    // box-shadow: 0px 1px 5px #dddddd;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 11%), 0 1px 2px 0 rgb(0 0 0 / 8%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    .right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center !important;
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            color: var(--card-title);
+        }
+    }
+    .textbox {
+        height: 4rem;
+        border: 0;
+        padding: 0rem 1rem;
+        border-right: 2px solid var(--input-border-color);
+        width: 100%;
+    }
+    .input-container {
+        display: flex;
+        align-items: center;
+        i {
+            margin-right: 0.4rem;
+            color: #5565DF;
+        }
+    }
+}
+
+@media (max-width: 1194px) {
+    .search-bar {
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.filter-button {
+    display: none;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 643px) {
+    .list {
+        grid-template-columns: 1fr;
+    }
+    .search-bar {
+        .right label {
+            display: none;
+        }
+        .right .filter-button {
+            display: block;
+        }
+        .input-container {
+            flex-grow: 1;
+        }
+        .input-container:nth-child(2) {
+            display: none;
+        }
+        .textbox {
+            border: none;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 6rem 0 4rem 0;
+    }
+}
+
+.fulltime-checkbox {
+    -webkit-appearance: none;
+    background: var(--button-grey);
+    border: none;
+    border-radius: 0.1rem;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.fulltime-checkbox:checked {
+    background-color: #5565DF;
+    border: none;
+    color: #fff;
+}
+
+.fulltime-checkbox:checked:after {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: #5565DF;
+}
+
+.lg-checkbox {
+    padding: 0.6rem;
+    margin-right: 0.5rem;
+}
+
+.lg-checkbox:checked:after {
+    color: #fff;
+}
+
+.lg-button {
+    display: none;
+}
+
+.search-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-items * {
+    margin-right: 0.5rem;
+}
+
+@media (min-width: 1090px) {
+    .lg-button {
+        display: block;
+    }
+    .sm-button {
+        display: none;
+    }
+}
+
+app-job-card {
+    outline: none !important;
+}
+
+.item {
+    background: var(--card-color);
+    padding: 1rem;
+    border-radius: 0.2rem;
+}
+
+.dialog-content h3 {
+    color: var(--card-title);
+}
+
+.modal-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    .input-container {
+        width: 100%;
+        margin-top: 1rem;
+        display: grid;
+        position: relative;
+        i {
+            position: absolute;
+            top: 0.8rem;
+            left: 0rem;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        input {
+            padding: 1rem 1rem 1rem 1.7rem;
+            border: 0;
+            font-size: 1.2rem;
+            background: var(--card-color);
+            color: var(--card-title);
+        }
+    }
+    label {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--card-title);
+    }
+}

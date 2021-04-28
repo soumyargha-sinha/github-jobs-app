@@ -1,0 +1,21 @@
+@import "assets/colors";
+@import "assets/animations";
+@import "assets/theme";
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: var(--background-primary-color);
+}
+
+.card {
+    background: var(--card-color);
+}
+
+.bottom-div {
+    margin-bottom: 2rem;
+}

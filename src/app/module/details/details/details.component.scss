@@ -1,0 +1,170 @@
+.job-header-card {
+    display: flex;
+    align-items: center;
+    img {
+        margin-right: 1rem;
+        width: 10%;
+    }
+    .buttons {
+        margin-left: auto;
+    }
+    p {
+        font-weight: 600;
+        color: #898a8d;
+    }
+    .company-title h3 {
+        color: var(--card-title);
+    }
+    margin: 6rem 0 2rem 0;
+}
+
+.inner-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.card {
+    // box-shadow: 1px 1px 10px #dddddd;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 11%), 0 1px 2px 0 rgb(0 0 0 / 8%);
+    padding: 1.5rem 2rem;
+    border-radius: 0.4rem;
+}
+
+.job-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .date {
+        color: #898a8d;
+        font-weight: 600;
+        font-size: 0.9rem;
+        letter-spacing: 0.2px;
+        margin-bottom: 0.5rem;
+        i {
+            font-size: 0.4rem;
+            vertical-align: middle;
+        }
+    }
+    h2 {
+        margin-bottom: 0.3rem;
+        color: var(--card-title);
+    }
+    p {
+        color: #4753c7;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    margin-bottom: 1.5rem;
+}
+
+.job-details {
+    color: var(--text-grey);
+    margin-bottom: 2rem;
+}
+
+:host ::ng-deep .job-details strong {
+    color: var(--card-title);
+}
+
+:host ::ng-deep .job-details h2 {
+    margin: 2rem 0 0 0;
+    color: var(--card-title);
+}
+
+:host ::ng-deep .job-details p {
+    margin: 1rem 0 1rem 0;
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+:host ::ng-deep .job-details ul {
+    padding: 0 1rem 0 1rem;
+    line-height: 2rem;
+}
+
+:host ::ng-deep .job-details ol {
+    padding: 0 1rem 0 1rem;
+    line-height: 2rem;
+}
+
+:host ::ng-deep .job-details a {
+    font-weight: bold;
+    text-underline-offset: 0.1rem;
+}
+
+.how-to-apply {
+    margin-top: 2rem;
+    background: linear-gradient(#464c9e, #464c9e);
+    h3 {
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+    p {
+        color: #fff;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+    margin-bottom: 2rem;
+}
+
+:host ::ng-deep .how-to-apply a {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: underline;
+    line-height: 2rem;
+    word-wrap: break-word;
+    text-underline-offset: 0.3rem;
+}
+
+:host ::ng-deep .how-to-apply ol {
+    padding: 0 1rem;
+}
+
+:host ::ng-deep .how-to-apply ul {
+    padding: 0 1rem;
+}
+
+.buttons {
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+.buttons * {
+    margin-left: 0.5rem;
+    height: 100%;
+}
+
+@media (max-width: 800px) {
+    .job-title {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        .buttons {
+            margin: 1.5rem 0 1rem 0;
+        }
+    }
+    .job-header-card {
+        flex-direction: column;
+        justify-content: center;
+        .buttons {
+            margin: 1.5rem 0 0.5rem 0;
+        }
+        img {
+            margin: 0 auto;
+            width: 30%;
+        }
+        .company-title {
+            text-align: center;
+        }
+        align-items: center;
+    }
+}
+
+.item {
+    min-height: 60px;
+    width: 100%;
+    padding: 1rem;
+    background: var(--card-color);
+    overflow: hidden;
+}

@@ -1,0 +1,6 @@
+<a *ngIf="btnLeftIcon && caption" class="btn btnLeftIcon" [ngClass]="{ 'btn-blue': btnType=='btn-blue', 'btn-grey': btnType=='btn-grey' }">
+    <i *ngIf="leftIcon" [ngClass]="['fas', 'fa-'+leftIcon]"></i> {{caption}}
+</a>
+<a *ngIf="!btnLeftIcon" class="btn" [ngClass]="{ 'btn-blue': btnType=='btn-blue', 'btn-grey': btnType=='btn-grey' }">
+    <i [ngClass]="['fas', 'fa-'+leftIcon]"></i> {{caption}}
+</a>

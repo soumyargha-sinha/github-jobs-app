@@ -1,0 +1,17 @@
+app-navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+    .container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,18 @@
+$background-primary-color: #F5F6F8;
+$background-primary-color-dark: #131722;
+$primary-blue: #5A67E1;
+$primary-blue-hover: #3b48bd;
+$primary-violet: #7C5DF6;
+$card-color: #FFF;
+$card-color-dark: #18202D;
+$input-border-color: #BFBFBF;
+$input-border-color-dark: #363636;
+$card-title: #000;
+$card-title-dark: #fff;
+$text-grey: #5a5a5a;
+$text-grey-dark: #aca1d8;
+$button-grey: #ddd;
+$button-grey-dark: #8f8f8f;
+$placeholder: #eff1f6;
+$placeholder-dark: #808080;
+$colors: ( --placeholder: ($placeholder, $placeholder-dark), --button-grey: ($button-grey, $button-grey-dark), --text-grey: ($text-grey, $text-grey-dark), --primary-blue: ($primary-blue, $primary-blue), --primary-blue-hover: ($primary-blue-hover, $primary-blue-hover), --card-title: ($card-title, $card-title-dark), --background-primary-color: ($background-primary-color, $background-primary-color-dark), --card-color: ($card-color, $card-color-dark), --input-border-color: ($input-border-color, $input-border-color-dark))

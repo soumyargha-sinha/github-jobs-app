@@ -1,0 +1,62 @@
+<div class="card search-bar">
+    <div class="input-container">
+        <i class="fas fa-search"></i>
+        <input type="text" [(ngModel)]="filters.description" class="textbox" placeholder="Filter by title, benefits, expertise">
+    </div>
+    <div class="input-container">
+        <i class="fas fa-map-marker"></i>
+        <input type="text" [(ngModel)]="filters.location" class="textbox" placeholder="Filter by city, state, zip code or country">
+    </div>
+    <div class="right">
+        <label for="">
+            <input type="checkbox" class="fulltime-checkbox lg-checkbox" [(ngModel)]="filters.fullTime"> Full Time Only
+        </label>
+        <app-button (click)="searchByFilter()" caption="Search" btnType="btn-blue" btnLeftIcon="true" leftIcon="search" class="lg-button"></app-button>
+        <app-button btnType="btn-grey" leftIcon="filter" class="filter-button" (click)="showFilterModal = !showFilterModal"></app-button>
+        <app-button (click)="searchByFilter()" btnType="btn-blue" leftIcon="search" class="sm-button"></app-button>
+    </div>
+</div>
+<div class="search-items" *ngIf="filtered">
+    <app-chip caption="{{searchedFilters.description}}" icon="times-circle" chipType="chip-violet" *ngIf="searchedFilters.description.length>0" (click)="cancelFilterParam('description','')"></app-chip>
+    <app-chip caption="{{searchedFilters.location}}" icon="times-circle" chipType="chip-violet" *ngIf="searchedFilters.location.length>0" (click)="cancelFilterParam('location','')"></app-chip>
+    <app-chip caption="Full Time Only" icon="times-circle" chipType="chip-violet" *ngIf="searchedFilters.fullTime" (click)="cancelFilterParam('fullTime',false)"></app-chip>
+</div>
+<app-message-box *ngIf="jobsLoaded && !jobs.length" icon="frown" message="No jobs found. Please try again later."></app-message-box>
+<app-message-box *ngIf="error" icon="frown" message="There was an error. Please try again later.">
+    <app-button btnType="btn-blue" caption="Try Again" (click)="fetchJobs()"></app-button>
+</app-message-box>
+
+<div class="list" *ngIf="!error">
+    <app-job-card *ngFor="let job of jobs" [job]="job" routerLink="/job/{{job.id}}"></app-job-card>
+    <ng-container *ngIf="!jobsLoaded || loadingMore">
+        <div class="item" *ngFor="let item of generatePlaceholderData()">
+            <ngx-skeleton-loader count="1" [theme]="{'width': '60px', 'height': '60px', 'background-color': 'var(--placeholder)'}"></ngx-skeleton-loader>
+            <ngx-skeleton-loader count="1" [theme]="{'width': '100%', 'background-color': 'var(--placeholder)'}"></ngx-skeleton-loader>
+            <ngx-skeleton-loader count="1" [theme]="{'width': '80%', 'background-color': 'var(--placeholder)'}"></ngx-skeleton-loader>
+            <ngx-skeleton-loader count="1" [theme]="{'width': '30%', 'background-color': 'var(--placeholder)'}"></ngx-skeleton-loader>
+        </div>
+    </ng-container>
+</div>
+<div class="buttons bottom-div" *ngIf="jobs?.length">
+    <app-button caption="Load More" btnType="btn-blue" (click)="loadMore()" *ngIf="!loadingMore"></app-button>
+    <app-button caption="Loading" btnType="btn-blue" *ngIf="loadingMore"></app-button>
+</div>
+
+<app-modal [(visible)]="showFilterModal">
+    <div class="dialog-content">
+        <h3>Filter by Location</h3>
+        <div class="modal-form">
+            <div class="input-container">
+                <i class="fas fa-map-marker"></i>
+                <input type="text" [(ngModel)]="filters.location" class="textbox" placeholder="Filter by city, state, zip code or country">
+            </div>
+            <hr>
+            <label for="">
+                <input type="checkbox" class="fulltime-checkbox lg-checkbox" [(ngModel)]="filters.fullTime"> Full Time Only
+            </label>
+        </div>
+        <div class="buttons">
+            <app-button (click)="searchByFilter(); showFilterModal = false" caption="Search" btnType="btn-blue" btnLeftIcon="true" leftIcon="search"></app-button>
+        </div>
+    </div>
+</app-modal>

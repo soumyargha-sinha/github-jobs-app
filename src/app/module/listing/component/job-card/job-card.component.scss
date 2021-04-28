@@ -1,0 +1,60 @@
+.card {
+    // box-shadow: 1px 1px 10px #dddddd;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 11%), 0 1px 2px 0 rgb(0 0 0 / 8%);
+    padding: 1.5rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 1px 7px 0 rgb(0 0 0 / 11%), 0 1px 10px 0 rgb(0 0 0 / 8%);
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.3rem;
+    margin-top: -3.3rem;
+    // box-shadow: 1px 1px 2px #ddd;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 11%), 0 1px 2px 0 rgb(0 0 0 / 8%);
+}
+
+.date {
+    color: #898a8d;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    i {
+        font-size: 0.4rem;
+        vertical-align: middle;
+    }
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-top: 0.7rem;
+    color: var(--card-title);
+}
+
+h4 {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6b6b6b;
+}
+
+.location {
+    color: #575fd6;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+.job-card {
+    height: 100%;
+    cursor: pointer;
+}

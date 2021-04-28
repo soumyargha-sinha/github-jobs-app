@@ -1,0 +1,6 @@
+<div [@dialog] *ngIf="visible" class="dialog">
+    <ng-content></ng-content>
+    <i *ngIf="closable" (click)="close()" class="fas fa-window-close close-icon">
+    </i>
+</div>
+<div *ngIf="visible" class="overlay" (click)="close()"></div>

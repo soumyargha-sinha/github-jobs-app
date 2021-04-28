@@ -1,0 +1,42 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog {
+    z-index: 3;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 15rem;
+    margin-right: auto;
+    margin-left: auto;
+    height: auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 520px;
+    background-color: var(--card-color);
+    border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .dialog {
+        top: 40px;
+    }
+}
+
+.close-icon {
+    border: 0;
+    background: red;
+    color: #fff;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
